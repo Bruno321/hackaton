@@ -2,6 +2,8 @@ package com.study;
 
 import com.facebook.react.ReactActivity;
 
+import io.invertase.notifee.NotifeeApiModule;
+
 public class MainActivity extends ReactActivity {
 
   /**
@@ -10,6 +12,9 @@ public class MainActivity extends ReactActivity {
    */
   @Override
   protected String getMainComponentName() {
-    return "study";
+    return NotifeeApiModule.getMainComponent("app");
   }
+  /*protected String getMainComponentName() {
+    return "study";
+  }*/
 }
