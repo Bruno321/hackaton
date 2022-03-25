@@ -5,8 +5,15 @@ import {
   Button
 } from 'react-native';
 import notifee from '@notifee/react-native';
+import { NavigationContainer } from '@react-navigation/native'
+import { createStackNavigator } from '@react-navigation/stack'
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 
+// Screens
+import HomeScreen from './src/Screens/HomeScreen'
 
+const Tab = createBottomTabNavigator();
+const Stack = createStackNavigator();
 
 const App = () => {
 
@@ -42,12 +49,17 @@ const App = () => {
 
   }
 
+    // <View>
+    //   <Text>Hola</Text>
+    //   <Button title="Display Notification" onPress={() => onDisplayNotification()} />
+    //   <Button title="TIMer" onPress={() => timer()} />
+    // </View>
   return (
-    <View>
-      <Text>Hola</Text>
-      <Button title="Display Notification" onPress={() => onDisplayNotification()} />
-      <Button title="TIMer" onPress={() => timer()} />
-    </View>
+    <NavigationContainer > 
+      <Stack.Navigator >
+        <Tab.Screen name="Home" component={HomeScreen} options={{ headerShown: false }} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 };
 
