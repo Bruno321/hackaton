@@ -12,6 +12,10 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 // Screens
 import HomeScreen from './src/Screens/HomeScreen'
 
+// Context
+import AppContext from './src/context/AppContext'
+
+
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
 
@@ -49,17 +53,14 @@ const App = () => {
 
   }
 
-    // <View>
-    //   <Text>Hola</Text>
-    //   <Button title="Display Notification" onPress={() => onDisplayNotification()} />
-    //   <Button title="TIMer" onPress={() => timer()} />
-    // </View>
   return (
-    <NavigationContainer > 
-      <Stack.Navigator >
-        <Tab.Screen name="Home" component={HomeScreen} options={{ headerShown: false }} />
-      </Stack.Navigator>
-    </NavigationContainer>
+    // <AppContext.Provider value={initialState}>
+      <NavigationContainer > 
+        <Stack.Navigator >
+          <Tab.Screen name="Home" component={HomeScreen} options={{ headerShown: false }} />
+        </Stack.Navigator>
+      </NavigationContainer>
+    // </AppContext.Provider>
   );
 };
 

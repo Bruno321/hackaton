@@ -5,7 +5,8 @@ import {
     StyleSheet
 } from 'react-native'
 
-
+// si no hay cuestionarias renderiza componente no hay nada
+    // si hay cuestionarias renderiza componente mostrar cuestionarios y buscador
 function VerCuestionariosScreen(){
     return (
         <View>
